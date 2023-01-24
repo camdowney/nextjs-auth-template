@@ -110,7 +110,7 @@ export default ({ _posts }: PageProps) => {
             <div className='post' key={index}>
               <h3>{post.title}</h3>
               <p className='post-content'>{post.content}</p>
-              <button onClick={e => deletePost(e, post.id)}>Delete</button>
+              <button className='post-delete-btn' onClick={e => deletePost(e, post.id)}>Delete</button>
             </div>
           )}
         </div>
