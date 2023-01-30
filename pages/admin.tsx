@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { unstable_getServerSession } from 'next-auth/next'
+import { getServerSession } from 'next-auth/next'
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
@@ -7,7 +7,7 @@ import { signOut } from 'next-auth/react'
 import prisma from 'lib/prisma'
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const _session = await unstable_getServerSession(ctx.req, ctx.res, authOptions)
+  const _session = await getServerSession(ctx.req, ctx.res, authOptions)
 
   if (!_session) {
     return {

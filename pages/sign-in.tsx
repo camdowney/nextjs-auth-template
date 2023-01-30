@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
-import { unstable_getServerSession } from 'next-auth/next'
+import { getServerSession } from 'next-auth/next'
 import { signIn } from 'next-auth/react'
 import { authOptions } from 'pages/api/auth/[...nextauth]'
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const session = await unstable_getServerSession(ctx.req, ctx.res, authOptions)
+  const session = await getServerSession(ctx.req, ctx.res, authOptions)
 
   if (session) {
     return {
