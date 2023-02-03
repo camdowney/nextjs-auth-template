@@ -1,4 +1,4 @@
-interface Post {
+type Post = {
   id: Number
   content: string
   created: Date
